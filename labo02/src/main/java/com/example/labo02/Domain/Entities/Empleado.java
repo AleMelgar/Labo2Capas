@@ -29,4 +29,13 @@ public class Empleado {
 
     @Column
     private LocalDate fechaIngreso;
+
+    @ManyToOne
+    @JoinColumn(name = "id_puesto", nullable = false, foreignKey = @ForeignKey(name = "fk_puesto_empleado"))
+    private Puesto puesto;
+
+    @ManyToOne
+    @JoinColumn(name = "id_departamento", nullable = false, foreignKey = @ForeignKey(name = "fk_departamento_empleado"))
+    private Departamento departamento;
+
 }

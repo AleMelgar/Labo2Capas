@@ -25,4 +25,9 @@ public class Cliente {
 
     @Column
     private String email;
+
+    @ManyToOne
+    @JoinColumn(name = "id_industria", nullable = false, foreignKey = @ForeignKey(name = "fk_industria_cliente"))
+    private Industria industria;
+
 }

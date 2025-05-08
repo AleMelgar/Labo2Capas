@@ -23,4 +23,9 @@ public class Evaluacion {
 
     @Column
     private Double puntaje;
+
+    @ManyToOne
+    @JoinColumn(name = "id_empleado", nullable = false, foreignKey = @ForeignKey(name = "fk_empleado_evaluacion"))
+    private Empleado empleado;
+
 }

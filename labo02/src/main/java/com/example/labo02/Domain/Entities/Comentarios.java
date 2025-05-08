@@ -28,4 +28,9 @@ public class Comentarios {
     @Column
     private String autor;
 
+    @ManyToOne
+    @JoinColumn(name = "id_evaluacion", nullable = false, foreignKey = @ForeignKey(name = "fk_evaluacion_comentario"))
+    private Evaluacion evaluacion;
+
+
 }

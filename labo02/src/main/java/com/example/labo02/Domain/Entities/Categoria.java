@@ -20,4 +20,9 @@ public class Categoria {
 
     @Column
     private String nombre;
+
+    @ManyToOne
+    @JoinColumn(name = "id_area", nullable = false, foreignKey = @ForeignKey(name = "fk_area_categoria"))
+    private Area area;
+
 }
