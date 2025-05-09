@@ -1,4 +1,8 @@
 package com.example.labo02.Domain.Repository;
 
-public interface IComentarios_Repositoy {
+import com.example.labo02.Domain.Entities.Comentarios;
+
+import java.util.UUID;
+
+public interface IComentarios_Repositoy extends Igeneral_repository<Comentarios, UUID>{
 }

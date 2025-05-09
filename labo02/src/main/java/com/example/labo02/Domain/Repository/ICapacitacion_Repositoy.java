@@ -1,4 +1,8 @@
 package com.example.labo02.Domain.Repository;
 
-public interface ICapacitacion_Repositoy {
+import com.example.labo02.Domain.Entities.Capacitacion;
+
+import java.util.UUID;
+
+public interface ICapacitacion_Repositoy extends Igeneral_repository<Capacitacion, UUID>{
 }
