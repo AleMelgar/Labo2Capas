@@ -16,4 +16,8 @@ public interface IDepartamento_Repositoy extends Igeneral_repository<Departament
     @Query( nativeQuery = true, value = "SELECT * FROM Departamento WHERE nombre = :nombre")
     public Departamento findBynombreNative(@Param("nombre") String nombre);
 
+    //hibrido
+    @Query("SELECT d FROM Departamento d WHERE d.nombre = :nombre")
+    Departamento findByNombreh(@Param("nombre") String nombre);
+
 }

@@ -16,4 +16,8 @@ public interface ICliente_Repositoy extends Igeneral_repository<Cliente, UUID>{
     @Query( nativeQuery = true, value = "SELECT * FROM Cliente WHERE nombre = :nombre")
     public Cliente findBynombreNative(@Param("nombre") String nombre);
 
+    //hibrida
+    @Query("SELECT c FROM Cliente c WHERE c.nombre = :nombre")
+    Cliente findByNombreh(@Param("nombre") String nombre);
+
 }

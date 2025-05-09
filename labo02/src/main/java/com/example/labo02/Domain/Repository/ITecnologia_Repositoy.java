@@ -16,4 +16,8 @@ public interface ITecnologia_Repositoy extends Igeneral_repository<Tecnologia, U
     @Query( nativeQuery = true, value = "SELECT * FROM Tecnologia WHERE nombre = :nombre")
     public Tecnologia findBynombreNative(@Param("nombre") String nombre);
 
+    //hibrida
+    @Query("SELECT t FROM Tecnologia t WHERE t.nombre = :nombre AND t.version = :version")
+    Tecnologia findByNombreh(@Param("nombre") String nombre, @Param("version") String version);
+
 }

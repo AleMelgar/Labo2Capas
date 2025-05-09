@@ -16,4 +16,8 @@ public interface ICapacitacion_Repositoy extends Igeneral_repository<Capacitacio
     @Query( nativeQuery = true, value = "SELECT * FROM Capacitacion WHERE tema = :tema")
     public Capacitacion findBytemaNative(@Param("tema") String tema);
 
+    //hibrida
+    @Query("SELECT c FROM Capacitacion c WHERE c.tema = :tema")
+    Capacitacion findByTemah(@Param("tema") String tema);
+
 }
