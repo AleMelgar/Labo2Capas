@@ -2,6 +2,9 @@ package com.example.labo02.Domain.Repository;
 
 import com.example.labo02.Domain.Entities.Comentarios;
 import jakarta.transaction.Transactional;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
 import java.util.UUID;
 
 
@@ -9,4 +12,9 @@ import java.util.UUID;
 public interface IComentarios_Repositoy extends Igeneral_repository<Comentarios, UUID>{
     // La consulta jpa
     public Comentarios findByautor(String autor);
+
+    //directa
+    @Query( nativeQuery = true, value = "SELECT * FROM Comentarios WHERE autor = :autor")
+    public Comentarios findByautorNative(@Param("autor") String autor);
+
 }
