@@ -16,4 +16,8 @@ public interface IEmpleadp_Repositoy extends Igeneral_repository<Empleado, UUID>
     @Query( nativeQuery = true, value = "SELECT * FROM Empleado WHERE nombre = :nombre")
     public Empleado findBynombreNative(@Param("nombre") String nombre);
 
+    //hibrida
+    @Query("SELECT e FROM Empleado e WHERE e.email = :email")
+    Empleado findByEmailh(@Param("email") String email);
+
 }

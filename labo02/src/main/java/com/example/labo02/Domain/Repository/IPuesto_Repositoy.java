@@ -16,4 +16,8 @@ public interface IPuesto_Repositoy extends Igeneral_repository<Puesto, UUID>{
     @Query( nativeQuery = true, value = "SELECT * FROM Puesto WHERE nombre = :nombre")
     public Puesto findBynombreNative(@Param("nombre") String nombre);
 
+    //hibrida
+    @Query("SELECT p FROM Puesto p WHERE p.nombre = :nombre")
+    Puesto findByNombreh(@Param("nombre") String nombre);
+
 }

@@ -5,6 +5,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
 import java.util.UUID;
 
 
@@ -16,5 +17,9 @@ public interface IComentarios_Repositoy extends Igeneral_repository<Comentarios,
     //directa
     @Query( nativeQuery = true, value = "SELECT * FROM Comentarios WHERE autor = :autor")
     public Comentarios findByautorNative(@Param("autor") String autor);
+
+    //hibrida
+    @Query("SELECT c FROM Comentarios c WHERE c.autor = :autor")
+    List<Comentarios> findByAutorh(@Param("autor") String autor);
 
 }

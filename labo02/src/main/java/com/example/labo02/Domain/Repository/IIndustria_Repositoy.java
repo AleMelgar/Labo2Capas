@@ -16,4 +16,8 @@ public interface IIndustria_Repositoy extends Igeneral_repository<Industria, UUI
     @Query( nativeQuery = true, value = "SELECT * FROM Industria WHERE nombre = :nombre")
     public Industria findBynombreNative(@Param("nombre") String nombre);
 
+    //hibrida
+    @Query("SELECT i FROM Industria i WHERE i.nombre = :nombre")
+    Industria findByNombreh(@Param("nombre") String nombre);
+
 }

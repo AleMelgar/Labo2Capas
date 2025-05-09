@@ -17,6 +17,10 @@ public interface IArea_Repositoy extends Igeneral_repository<Area, UUID>{
     @Query( nativeQuery = true, value = "SELECT * FROM area WHERE nombre = :nombre")
     public Area findBynombreNative(@Param("nombre") String nombre);
 
+    //hibrido
+    @Query("SELECT a FROM Area a WHERE a.nombre = :nombre")
+    Area findByNombreh(@Param("nombre") String nombre);
+
 
 }
 
