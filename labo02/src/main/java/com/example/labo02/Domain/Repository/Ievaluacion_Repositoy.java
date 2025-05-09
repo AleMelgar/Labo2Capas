@@ -11,7 +11,8 @@ import java.util.UUID;
 @Transactional
 public interface Ievaluacion_Repositoy extends Igeneral_repository<Evaluacion, UUID>{
     // La consulta jpa
-    public Evaluacion findBypuntaje(String puntaje);
+    Evaluacion findByPuntaje(Double puntaje);
+
 
     //directa
     @Query( nativeQuery = true, value = "SELECT * FROM Evaluacion WHERE puntaje = :puntaje")

@@ -11,7 +11,8 @@ import java.util.UUID;
 public interface IEmpxProy_Repositoy extends Igeneral_repository<EmpleadoXProyecto, UUID>{
 
     // la consulta jpa
-    List<EmpleadoXProyecto> findByEmpleadoId(UUID idEmpleado);
+    List<EmpleadoXProyecto> findByEmpleado_IdEmpleado(UUID idEmpleado);
+
 
     // la directa
     @Query(value = "SELECT * FROM empleado_x_proyecto WHERE id_empleado = :idEmpleado", nativeQuery = true)

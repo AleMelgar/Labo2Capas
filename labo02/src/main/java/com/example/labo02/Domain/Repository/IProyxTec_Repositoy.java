@@ -12,7 +12,8 @@ import java.util.UUID;
 public interface IProyxTec_Repositoy extends Igeneral_repository<ProyectoXTecnologia, UUID>{
 
     // la consulta jpa
-    List<ProyectoXTecnologia> findByProyectoId(UUID idProyecto);
+    List<ProyectoXTecnologia> findByProyecto_IdProyecto(UUID idProyecto);
+
 
     // directa
     @Query(value = "SELECT * FROM proyecto_x_tecnologia WHERE id_proyecto = :idProyecto", nativeQuery = true)

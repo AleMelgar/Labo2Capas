@@ -12,7 +12,8 @@ import java.util.UUID;
 public interface IEmpxment_Repositoy extends Igeneral_repository<EmpleadoXMentor, UUID>{
 
     // la consulta jpa
-    List<EmpleadoXMentor> findByMentoreadoid_mentoreado(UUID idMentoreado);
+    List<EmpleadoXMentor> findByMentoreado_IdEmpleado(UUID idMentoreado);
+
 
     //la directa
     @Query( nativeQuery = true, value = "SELECT * FROM empleado_x_mentor WHERE id_mentor = :idMentor")
