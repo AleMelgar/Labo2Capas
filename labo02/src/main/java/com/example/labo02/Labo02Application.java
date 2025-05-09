@@ -11,3 +11,8 @@ public class Labo02Application {
     }
 
 }
+//identificar identidades
+//implimentar identidades con repositorios
+//funcion de jpa
+//una query hibrida
+//una query nativa
